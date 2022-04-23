@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="otherstyle.css">
+    
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>MQuip</title>
+   </head>
+<body>
+  <div class="sidebar">
+    <div class="logo-details">
+      <span class="logo_name">&nbsp;&nbsp;MQuip</span>
+    </div>
+      <ul class="nav-links">
+        <li>
+          <a href="student.html" class="active">
+            <i class='bx bx-grid-alt' ></i>
+            <span class="links_name">Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class='bx bx-pie-chart-alt-2' ></i>
+            <span class="links_name">Courses</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class='bx bx-coin-stack' ></i>
+            <span class="links_name">Students</span>
+          </a>
+        </li>
+        <li>
+          <a href="information.html">
+            <i class='bx bx-user' ></i>
+            <span class="links_name">Information</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class='bx bx-message' ></i>
+            <span class="links_name">Messages</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class='bx bx-cog' ></i>
+            <span class="links_name">Settings</span>
+          </a>
+        </li>
+        <li class="log_out">
+          <a href="main.html">
+            <i class='bx bx-log-out'></i>
+            <span class="links_name">Log out</span>
+          </a>
+        </li>
+      </ul>
+  </div>
+  <section class="home-section">
+    <nav>
+      <div class="sidebar-button">
+        <i class='bx bx-menu sidebarBtn'></i>
+        <span class="dashboard">Dashboard</span>
+      </div>
+      <div class="search-box">
+        <input type="text" placeholder="Search...">
+        <i class='bx bx-search' ></i>
+      </div>
+      <div class="profile-details">
+        <span class="admin_name">Admin</span>
+        <i class='bx bx-chevron-down' ></i>
+      </div>
+    </nav>
+
+    <div class="home-content">
+      
+
+      <div class="sales-boxes">
+        <div class="recent-sales box">
+          <div class="title">Course Information</div>
+          <div class="sales-details">
+            <ul class="details">
+            <li class="topic">Add, Delete Courses Here</li>
+            <tr>
+                <section>
+                    <div class="course1" id="cr">
+                        <p class="titles"><i class="glyphicon glyphicon-list-alt"></i>&nbsp&nbsp COURSE INFORMATION</p>
+                        <br><br>
+                        <div style="margin:10px;">
+                            <input class="btn" type="button" value="Add Courses" onclick="addSubject()">
+                            <input class="btn" type="button" value="Save" onclick="savesubject()" style="float:right"><br><br>
+                            <p style="text-align:center;font-size:15px;"><b>Edit Courses</b></p>
+                            <div id="content2" style="background-color: #276969; border:1px solid grey; border-radius:10px; width:1150px; margin-left:40px; height:430px;">
+            
+                            </div>
+                        </div>
+                    </div>
+                    </section>
+            </tr>
+            <br><br><br>
+          </ul>
+          </div>
+          <div class="button">
+            <a href="admin.html">Back</a>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+   let sidebar = document.querySelector(".sidebar");
+let sidebarBtn = document.querySelector(".sidebarBtn");
+sidebarBtn.onclick = function() {
+  sidebar.classList.toggle("active");
+  if(sidebar.classList.contains("active")){
+  sidebarBtn.classList.replace("bx-menu" ,"bx-menu-alt-right");
+}else
+  sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+}
+ </script>
+
+ <script>
+function addSubject () {
+            document.querySelector('#content2').insertAdjacentHTML(
+                'afterbegin',
+                `<div class="subject">
+                    <br>
+                    <p style="margin-left:50px; font-size:20px"><b>Course ID: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    Course Name: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    Course Term: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    Instructor:</b></p>
+                    <div>
+                        <input type="text" name="Cnum" value="" placeholder="Course ID" style="margin-left:50px;" required/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="text" name="Cname" value="" placeholder="Course name" required/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input list="tm" name="tm" placeholder="Term" >
+                            <datalist id="tm">
+                                <option value="1st">
+                                <option value="2nd">
+                                <option value="3rd">
+                            </datalist>
+                        </input>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input list="instructor" name="instructor" placeholder="Instructor" >
+                            <datalist id="instructor">
+                                <option value="David Smith">
+                                <option value="Steven He">
+                                <option value="Nigel Ng">
+                                <option value="Clinton Loomis">
+                                <option value="Matthew Haag">
+                            </datalist>
+                        </input>
+                    </div>
+                    <input class="btn" type="button" value="Remove Course" onclick="removeSubject(this)" style="float:right;">
+                    <br><br>
+                </div>`
+            )
+        }
+
+        function removeSubject (input) {
+            input.parentNode.remove()
+        }
+
+        function savesubject() {
+            alert("Course Updated!");
+        }
+
+ </script>

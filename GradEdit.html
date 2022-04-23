@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="otherstyle.css">
+    
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>MQuip</title>
+   </head>
+<body>
+  <div class="sidebar">
+    <div class="logo-details">
+      <span class="logo_name">&nbsp;&nbsp;MQuip</span>
+    </div>
+      <ul class="nav-links">
+        <li>
+          <a href="student.html" class="active">
+            <i class='bx bx-grid-alt' ></i>
+            <span class="links_name">Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class='bx bx-pie-chart-alt-2' ></i>
+            <span class="links_name">Courses</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class='bx bx-coin-stack' ></i>
+            <span class="links_name">Students</span>
+          </a>
+        </li>
+        <li>
+          <a href="information.html">
+            <i class='bx bx-user' ></i>
+            <span class="links_name">Information</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class='bx bx-message' ></i>
+            <span class="links_name">Messages</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class='bx bx-cog' ></i>
+            <span class="links_name">Settings</span>
+          </a>
+        </li>
+        <li class="log_out">
+          <a href="main.html">
+            <i class='bx bx-log-out'></i>
+            <span class="links_name">Log out</span>
+          </a>
+        </li>
+      </ul>
+  </div>
+  <section class="home-section">
+    <nav>
+      <div class="sidebar-button">
+        <i class='bx bx-menu sidebarBtn'></i>
+        <span class="dashboard">Dashboard</span>
+      </div>
+      <div class="search-box">
+        <input type="text" placeholder="Search...">
+        <i class='bx bx-search' ></i>
+      </div>
+      <div class="profile-details">
+        <span class="admin_name">Teacher</span>
+        <i class='bx bx-chevron-down' ></i>
+      </div>
+    </nav>
+
+    <div class="home-content">
+      
+
+      <div class="sales-boxes">
+        <div class="recent-sales box">
+          <div class="title">Student Roster</div>
+          <div class="sales-details">
+            <ul class="details">
+            <li class="topic">Add, Delete Students In this Course</li>
+            <tr>
+                <section>
+                    <div class="grade2" id="gr">
+                        <p class="titles"><i class="glyphicon glyphicon-pencil"></i>&nbsp&nbsp EDIT CLASS GRADES</p>
+                        <div id="content2" style="background-color: #276969; border:1px solid grey; border-radius:10px; width:1150px; margin-left:40px; height:430px;">
+                        <div class="redhead">
+                        </div>
+                        <div class="editgrade">
+                            <h2>Student Grades</h2>
+                            <br><br>
+                            <table id="customers">
+                                  <tr>
+                                    <th>Lastname</th>
+                                    <th>Firstname</th>
+                                    <th>Student ID #</th>
+                                    <th>Year Level</th>
+                                    <th>Grade</th>
+                                  </tr>
+                                  <tr>
+                                    <td>Artour</td>
+                                    <td>Babaev</td>
+                                    <td>2019123322</td>
+                                    <td>2nd</td>
+                                    <td>85.9%</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Tyson</td>
+                                    <td>Ngo</td>
+                                    <td>2019123559</td>
+                                    <td>2nd</td>
+                                    <td>90.1%</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Russel</td>
+                                    <td>Dulken</td>
+                                    <td>2019123855</td>
+                                    <td>2nd</td>
+                                    <td>88%</td>
+                                  </tr>
+                                  <tr>
+                                    <td><input type="text" name="Lname" value="" placeholder="Lastname" required/></td>
+                                    <td><input type="text" name="Fname" value="" placeholder="Firstname" required/></td>
+                                    <td><input type="text" name="num" value="" placeholder="Student #" required/></td>
+                                    <td><input list="tm" name="tm" placeholder="Term" >
+                                        <datalist id="tm">
+                                            <option value="1st">
+                                            <option value="2nd">
+                                            <option value="3rd">
+                                        </datalist>
+                                    </input></td>
+                                    <td><input type="text" name="grade" value="%" required/></td>
+                                  </tr>
+                            </table>
+                            <br>
+                            <input class="btn" type="button" value="Update Grade" onclick="update()" style="float:right;margin-right:50px;">
+                            <input class="btn" type="button" value="Add student" onclick="" style="float:right;margin-right:20px;">
+                        </div>
+                    </div>
+                    </section>
+            </tr>
+            <br><br><br>
+          </ul>
+          </div>
+          <div class="button">
+            <a href="teacher.html">Back</a>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+   let sidebar = document.querySelector(".sidebar");
+let sidebarBtn = document.querySelector(".sidebarBtn");
+sidebarBtn.onclick = function() {
+  sidebar.classList.toggle("active");
+  if(sidebar.classList.contains("active")){
+  sidebarBtn.classList.replace("bx-menu" ,"bx-menu-alt-right");
+}else
+  sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+}
+ </script>
+ <script>
+     function show1() {
+          document.getElementById("cs").style.visibility = "visible";
+          document.getElementById("gr").style.visibility = "hidden";
+        }
+
+        function show2() {
+          document.getElementById("cs").style.visibility = "hidden";
+          document.getElementById("gr").style.visibility = "visible";
+          document.getElementById("en1").style.visibility = "hidden";
+          document.getElementById("en2").style.visibility = "hidden";
+          document.getElementById("en3").style.visibility = "hidden";
+          document.getElementById("en4").style.visibility = "hidden";
+        }
+
+        function update() {
+          alert("Grades Updated!");
+        }
+ </script>

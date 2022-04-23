@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="otherstyle.css">
+    
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>MQuip</title>
+   </head>
+<body>
+  <div class="sidebar">
+    <div class="logo-details">
+      <span class="logo_name">&nbsp;&nbsp;MQuip</span>
+    </div>
+      <ul class="nav-links">
+        <li>
+          <a href="student.html" class="active">
+            <i class='bx bx-grid-alt' ></i>
+            <span class="links_name">Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class='bx bx-pie-chart-alt-2' ></i>
+            <span class="links_name">Courses</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class='bx bx-coin-stack' ></i>
+            <span class="links_name">Students</span>
+          </a>
+        </li>
+        <li>
+          <a href="information.html">
+            <i class='bx bx-user' ></i>
+            <span class="links_name">Information</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class='bx bx-message' ></i>
+            <span class="links_name">Messages</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class='bx bx-cog' ></i>
+            <span class="links_name">Settings</span>
+          </a>
+        </li>
+        <li class="log_out">
+          <a href="main.html">
+            <i class='bx bx-log-out'></i>
+            <span class="links_name">Log out</span>
+          </a>
+        </li>
+      </ul>
+  </div>
+  <section class="home-section">
+    <nav>
+      <div class="sidebar-button">
+        <i class='bx bx-menu sidebarBtn'></i>
+        <span class="dashboard">Dashboard</span>
+      </div>
+      <div class="search-box">
+        <input type="text" placeholder="Search...">
+        <i class='bx bx-search' ></i>
+      </div>
+      <div class="profile-details">
+        <span class="admin_name">Admin</span>
+        <i class='bx bx-chevron-down' ></i>
+      </div>
+    </nav>
+
+    <div class="home-content">
+      
+
+      <div class="sales-boxes">
+        <div class="recent-sales box">
+          <div class="title">Student Information</div>
+          <div class="sales-details">
+            <ul class="details">
+            <li class="topic">Add, Delete Students Here</li>
+            <tr>
+                <section>
+                    <div class="stud" id="st">
+                        <br><br>
+                        <div style="margin:10px;">
+                            <input class="btn" type="button" value="Add student" onclick="addRow()">
+                            <input class="btn" type="button" value="Update" onclick="savestudent()" style="float:right"><br><br>
+                            <p style="text-align:center;font-size:15px;"><b>Edit General Information</b></p>
+                            <div id="content1" style="background-color: #276969;border:1px solid grey; border-radius:10px; width:1150px; margin-left:40px; height:480px;">
+            
+                            </div>
+                        </div>
+            
+                    </div>
+                    </section>
+            </tr>
+            <br><br><br>
+          </ul>
+          </div>
+          <div class="button">
+            <a href="admin.html">Back</a>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+   let sidebar = document.querySelector(".sidebar");
+let sidebarBtn = document.querySelector(".sidebarBtn");
+sidebarBtn.onclick = function() {
+  sidebar.classList.toggle("active");
+  if(sidebar.classList.contains("active")){
+  sidebarBtn.classList.replace("bx-menu" ,"bx-menu-alt-right");
+}else
+  sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+}
+ </script>
+
+<script>
+
+function addRow () {
+            document.querySelector('#content1').insertAdjacentHTML(
+                'afterbegin',
+                `<div class="row">
+                   
+                    
+                    Firstname:   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    Middlename:     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    Lastname:       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    suffix:
+                    </b>
+                    </p>
+                    <input type="text" name="Fname" value="" placeholder="Firstname" required/>
+                    <input style="width:80px;margin-left:30px;" type="text" name="Mname" value="" placeholder="Mi" required/>
+                    <input style="margin-left:30px;" type="text" name="Lname" value="" placeholder="Lastname" required/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input list="suffix" name="suffix" placeholder="Suffix" style="width:70px;">
+                    <datalist id="suffix">
+                        <option value="Jr">
+                        <option value="Sr">
+                        <option value="II">
+                        <option value="III">
+                        <option value="IV">
+                        </datalist>
+                    </input>
+                        <br><br>
+                    <p style="font-size:17px;"><b>
+                    Student ID #:   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    Program:     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                 &nbsp;&nbsp;
+                    Term:       &nbsp;&nbsp;&nbsp;
+                    Year:
+                    </b>
+                    </p>
+                    <input type="text" name="name" value="" placeholder="Student ID no."/> &nbsp&nbsp&nbsp&nbsp
+                    <input list="program" name="program" placeholder="Program" style="width:150px;">
+                        <datalist id="program">
+                        <option value="ECE">
+                        <option value="IE">
+                        <option value="CPE">
+                        </datalist>
+                    </input>
+                    <input list="trm" name="date" placeholder="Term" style="width:60px;">
+                        <datalist id="trm">
+                        <option value="1st">
+                        <option value="2nd">
+                        <option value="3rd">
+                        </datalist>
+                    </input>
+                    <input list="year" name="year" placeholder="Year" style="width:100px;">
+                        <datalist id="year">
+                        <option value="1">
+                        <option value="2">
+                        <option value="3">
+                        <option value="4">
+                        </datalist>
+                    </input>
+                    </div>
+                        <br>
+                    <input class="btn" type="button" value="Remove Student" onclick="removeRow(this)" style="float:left;">
+                        <br>
+                </div>`
+            )
+        }
+
+        function removeRow (input) {
+            input.parentNode.remove()
+        }
+
+        function savestudent() {
+            alert("Student Information Updated!");
+        }
+
+  </script>
+
+</body>
+</html>

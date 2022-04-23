@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="otherstyle.css">
+    
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>MQuip</title>
+   </head>
+<body>
+  <div class="sidebar">
+    <div class="logo-details">
+      <span class="logo_name">&nbsp;&nbsp;MQuip</span>
+    </div>
+      <ul class="nav-links">
+        <li>
+          <a href="student.html" class="active">
+            <i class='bx bx-grid-alt' ></i>
+            <span class="links_name">Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class='bx bx-pie-chart-alt-2' ></i>
+            <span class="links_name">Courses</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class='bx bx-coin-stack' ></i>
+            <span class="links_name">Students</span>
+          </a>
+        </li>
+        <li>
+          <a href="information.html">
+            <i class='bx bx-user' ></i>
+            <span class="links_name">Information</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class='bx bx-message' ></i>
+            <span class="links_name">Messages</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class='bx bx-cog' ></i>
+            <span class="links_name">Settings</span>
+          </a>
+        </li>
+        <li class="log_out">
+          <a href="main.html">
+            <i class='bx bx-log-out'></i>
+            <span class="links_name">Log out</span>
+          </a>
+        </li>
+      </ul>
+  </div>
+  <section class="home-section">
+    <nav>
+      <div class="sidebar-button">
+        <i class='bx bx-menu sidebarBtn'></i>
+        <span class="dashboard">Dashboard</span>
+      </div>
+      <div class="search-box">
+        <input type="text" placeholder="Search...">
+        <i class='bx bx-search' ></i>
+      </div>
+      <div class="profile-details">
+        <span class="admin_name">Teacher</span>
+        <i class='bx bx-chevron-down' ></i>
+      </div>
+    </nav>
+
+    <div class="home-content">
+      
+
+      <div class="sales-boxes">
+        <div class="recent-sales box">
+          <div class="title">Student Grades</div>
+          <div class="sales-details">
+            <ul class="details">
+            <li class="topic">Update Student Grades Here</li>
+            
+                <section>
+                    <div class="course2" id="cs">
+                        <p class="titles"><i class="glyphicon glyphicon-user"></i>&nbsp&nbsp ENROLL STUDENTS</p>
+                        <div id="content2" style="background-color: #276969; border:2px solid grey; border-radius:13px; width:1190px; margin-left:30px; height:430px;">
+                        <br>
+                        <div style="float:left">
+                            <br><br>
+                            <p style="text-align:center;font-size:15px;"><b>Student Roster</b></p>
+                            <div class="roster"><br>
+                                <ol>
+                                    <li style="margin-top:10px;margin-right:15px; font-size:20px;">
+                                        Artour Babaev &nbsp&nbsp<input class="btn" type="button" value="Enroll" onclick="enroll1()" style="float:right;">
+                                    </li>
+                                    <br>
+                                    <li style="margin-top:10px;margin-right:15px; font-size:20px;">
+                                        Tyson Ngo &nbsp&nbsp<input class="btn" type="button" value="Enroll" onclick="enroll2()" style="float:right;">
+                                    </li>
+                                    <br>
+                                    <li style="margin-top:10px;margin-right:15px; font-size:20px;">
+                                        Russel Dulken &nbsp&nbsp<input class="btn" type="button" value="Enroll" onclick="enroll3()" style="float:right;">
+                                    </li>
+                                    <br>
+                                    <li style="margin-top:10px;margin-right:15px; font-size:20px;">
+                                        Vincent Lirola &nbsp&nbsp<input class="btn" type="button" value="Enroll" onclick="enroll4()" style="float:right;">
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div  style="float:right">
+                          <br><br>
+                            <p style="text-align:center;font-size:15px;"><b>Enroll in Course:</b>
+                                <input list="courses" name="course" style="width:150px;">
+                                <datalist id="courses">
+                                <option value="CPE100">
+                                <option value="Math055">
+                                <option value="PE024">
+                                <option value="PHY031">
+                                <option value="PHY031L"> 
+                                </datalist>
+                            </p>
+        
+                            <div class="enrolled">
+                                <ul style="list-style-type: none;">
+                                    <li style="margin-top:25px;margin-right:20px; font-size:22px;">
+                                        <div id="en1" class="en1">
+                                            <table>
+                                                <tr>
+                                                
+                                                <td><p style="font-size:17px;">
+                                                    Student ID no:2019123322
+                                                    <br>Name:Artour Babaev
+                                                </p></td>
+                                                <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                                <td><p style="font-size:17px;">
+                                                    Program: ME
+                                                    <br>Email:ababaev@mcm.edu.ph
+                                                </p></td>
+                                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="btn" type="button" value="Unenroll" onclick="unenroll1()" style="float:right;margin-right:20px;"></td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </li>
+        
+                                    <li style="margin-right:20px; font-size:22px;">
+                                        <div id="en2" class="en2">
+                                            <table>
+                                                <tr>
+                                                
+                                                <td><p style="font-size:17px;">
+                                                    Student ID no:2019123559
+                                                    <br>Name:Tyson Ngo
+                                                </p></td>
+                                                <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                                <td><p style="font-size:17px;">
+                                                    Program: CPE
+                                                    <br>Email:tngo@mcm.edu.ph
+                                                </p></td>
+                                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="btn" type="button" value="Unenroll" onclick="unenroll2()" style="float:right;margin-right:20px;"></td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </li>
+        
+                                    <li style="margin-right:20px; font-size:22px;">
+                                        <div id="en3" class="en3">
+                                            <table>
+                                                <tr>
+                                                
+                                                <td><p style="font-size:16px;">
+                                                    Student ID no:2019123855
+                                                    <br>Name:Russel Dulken
+                                                </p></td>
+                                                <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                                <td><p style="font-size:17px;">
+                                                    Program: EE
+                                                    <br>Email:rdulken.edu.ph
+                                                </p></td>
+                                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="btn" type="button" value="Unenroll" onclick="unenroll3()" style="float:right;margin-right:20px;"></td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </li>
+        
+                                    <li style="margin-right:20px; font-size:22px;">
+                                        <div id="en4" class="en4">
+                                            <table>
+                                                <tr>
+                                                
+                                                <td><p style="font-size:15px;">
+                                                    Student ID no:2019123681
+                                                    <br>Name:Vincent Lirola
+                                                </p></td>
+                                                <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                                <td><p style="font-size:16px;">
+                                                    Program: IE
+                                                    <br>Email:vlirola@mcm.edu.ph
+                                                </p></td>
+                                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="btn" type="button" value="Unenroll" onclick="unenroll4()" style="float:right;margin-right:20px;"></td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+        
+                    </div>
+        
+                    </section>
+            
+            <br><br><br>
+          </ul>
+          </div>
+          <div class="button">
+            <a href="teacher.html">Back</a>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+   let sidebar = document.querySelector(".sidebar");
+let sidebarBtn = document.querySelector(".sidebarBtn");
+sidebarBtn.onclick = function() {
+  sidebar.classList.toggle("active");
+  if(sidebar.classList.contains("active")){
+  sidebarBtn.classList.replace("bx-menu" ,"bx-menu-alt-right");
+}else
+  sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+}
+ </script>
+
+ <script>
+
+
+        function show1() {
+          document.getElementById("cs").style.visibility = "visible";
+          document.getElementById("gr").style.visibility = "hidden";
+        }
+
+        function show2() {
+          document.getElementById("cs").style.visibility = "hidden";
+          document.getElementById("gr").style.visibility = "visible";
+          document.getElementById("en1").style.visibility = "hidden";
+          document.getElementById("en2").style.visibility = "hidden";
+          document.getElementById("en3").style.visibility = "hidden";
+          document.getElementById("en4").style.visibility = "hidden";
+        }
+
+        function enroll1() {
+          document.getElementById("en1").style.visibility = "visible";
+          alert("Succesfully Enrolled Artour!");
+        }
+        function enroll2() {
+          document.getElementById("en2").style.visibility = "visible";
+           alert("Succesfully Enrolled Tyson!");
+        }
+        function enroll3() {
+          document.getElementById("en3").style.visibility = "visible";
+           alert("Succesfully Enrolled Russel!");
+        }
+        function enroll4() {
+          document.getElementById("en4").style.visibility = "visible";
+           alert("Succesfully Enrolled Vincent!");
+        }
+
+        function unenroll1() {
+          document.getElementById("en1").style.visibility = "hidden";
+           alert("Unenrolled Artour!");
+        }
+        function unenroll2() {
+          document.getElementById("en2").style.visibility = "hidden";
+           alert("Unenrolled Tyson!");
+        }
+        function unenroll3() {
+          document.getElementById("en3").style.visibility = "hidden";
+           alert("Unenrolled Russel!");
+        }
+        function unenroll4() {
+          document.getElementById("en4").style.visibility = "hidden";
+           alert("Unenrolled Vincent!");
+        }
+
+ </script>
